@@ -1,0 +1,89 @@
+{
+  "SidebarItems": [
+    {
+      "icon": "House",
+      "label": "Dashboard",
+      "href": "/"
+    },
+    {
+      "icon": "ShoppingBag",
+      "label": "Products",
+      "href": "/products"
+    },
+    {
+      "icon": "Users",
+      "label": "Clients",
+      "href": "/clients"
+    },
+    {
+      "icon": "DollarSign",
+      "label": "Sales",
+      "href": "/sales"
+    },
+    {
+      "icon": "ShoppingCart",
+      "label": "Orders",
+      "href": "/orders"
+    },
+    {
+      "icon": "Settings",
+      "label": "Settings",
+      "href": "/settings"
+    },
+    {
+      "icon": "Mail",
+      "label": "Messages",
+      "href": "/messages"
+    },
+    {
+      "icon": "Bell",
+      "label": "Notifications",
+      "href": "/notifications"
+    },
+    {
+      "icon": "Info",
+      "label": "Help",
+      "href": "/help"
+    }
+  ],
+  "sales": [
+    { "year": 2022, "name": "Jan", "sales": 3200 },
+    { "year": 2022, "name": "Feb", "sales": 4100 },
+    { "year": 2022, "name": "Mar", "sales": 3900 },
+    { "year": 2022, "name": "Apr", "sales": 4500 },
+    { "year": 2022, "name": "May", "sales": 4700 },
+    { "year": 2022, "name": "Jun", "sales": 5100 },
+    { "year": 2022, "name": "Jul", "sales": 5300 },
+    { "year": 2022, "name": "Aug", "sales": 5600 },
+    { "year": 2022, "name": "Sep", "sales": 5900 },
+    { "year": 2022, "name": "Oct", "sales": 6200 },
+    { "year": 2022, "name": "Nov", "sales": 6500 },
+    { "year": 2022, "name": "Dec", "sales": 6800 },
+
+    { "year": 2023, "name": "Jan", "sales": 4000 },
+    { "year": 2023, "name": "Feb", "sales": 4300 },
+    { "year": 2023, "name": "Mar", "sales": 4800 },
+    { "year": 2023, "name": "Apr", "sales": 5000 },
+    { "year": 2023, "name": "May", "sales": 5400 },
+    { "year": 2023, "name": "Jun", "sales": 5900 },
+    { "year": 2023, "name": "Jul", "sales": 6100 },
+    { "year": 2023, "name": "Aug", "sales": 6400 },
+    { "year": 2023, "name": "Sep", "sales": 6700 },
+    { "year": 2023, "name": "Oct", "sales": 7100 },
+    { "year": 2023, "name": "Nov", "sales": 7600 },
+    { "year": 2023, "name": "Dec", "sales": 8000 },
+
+    { "year": 2024, "name": "Jan", "sales": 4500 },
+    { "year": 2024, "name": "Feb", "sales": 4800 },
+    { "year": 2024, "name": "Mar", "sales": 5300 },
+    { "year": 2024, "name": "Apr", "sales": 5600 },
+    { "year": 2024, "name": "May", "sales": 6100 },
+    { "year": 2024, "name": "Jun", "sales": 6400 },
+    { "year": 2024, "name": "Jul", "sales": 6800 },
+    { "year": 2024, "name": "Aug", "sales": 7200 },
+    { "year": 2024, "name": "Sep", "sales": 7600 },
+    { "year": 2024, "name": "Oct", "sales": 8000 },
+    { "year": 2024, "name": "Nov", "sales": 8500 },
+    { "year": 2024, "name": "Dec", "sales": 9000 }
+  ]
+}
