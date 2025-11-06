@@ -92,5 +92,44 @@
     { "name": "Home Appliances", "value": 260 },
     { "name": "Books", "value": 190 },
     { "name": "Beauty", "value": 220 }
+  ],
+  "orderStatusData": [
+    { "name": "Pending", "value": 320 },
+    { "name": "Processing", "value": 450 },
+    { "name": "Shipped", "value": 280 },
+    { "name": "Delivered", "value": 610 },
+    { "name": "Cancelled", "value": 150 }
+  ],
+  "productperformance": [
+    {
+      "name": "Smartphone",
+      "Retention": 8585,
+      "Revenue": 120000,
+      "Profit": 45000
+    },
+    {
+      "name": "Headphones ",
+      "Retention": 7878,
+      "Revenue": 98000,
+      "Profit": 37000
+    },
+    {
+      "name": "Smart TV ”",
+      "Retention": 9292,
+      "Revenue": 150000,
+      "Profit": 60000
+    },
+    {
+      "name": "Laptop ",
+      "Retention": 7070,
+      "Revenue": 88000,
+      "Profit": 32000
+    },
+    {
+      "name": "Smartwatch",
+      "Retention": 8088,
+      "Revenue": 132000,
+      "Profit": 52000
+    }
   ]
 }

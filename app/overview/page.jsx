@@ -6,6 +6,8 @@ import { DollarSign, ShoppingBag, SquareActivity, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import SalesOverviewChart from "../components/SalesOverviewChart";
 import CategoryDistributionCart from "../components/CategoryDistributionCart";
+import OrderDistributionChart from "../components/OrderDistributionChart";
+import ProuctPerformanceChart from "../components/ProductPerformanceChart";
 
 export default function OverviewPage() {
   return (
@@ -25,6 +27,8 @@ export default function OverviewPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <SalesOverviewChart />
           <CategoryDistributionCart />
+          <OrderDistributionChart/>
+          <ProuctPerformanceChart/>
         </div>
       </main>
     </div>
