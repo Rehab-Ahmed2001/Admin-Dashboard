@@ -8,12 +8,12 @@
     {
       "icon": "ShoppingBag",
       "label": "Products",
-      "href": "/products"
+      "href": "/Products"
     },
     {
       "icon": "Users",
       "label": "Clients",
-      "href": "/clients"
+      "href": "/Clients"
     },
     {
       "icon": "DollarSign",
