@@ -1,12 +1,14 @@
 "use client";
 import React, { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { Edit, Search, Trash2 } from "lucide-react";
+import { Edit, Save, Search, Trash2 } from "lucide-react";
 import Image from "next/image";
 
 export default function ProductsTable() {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [editingRow, setEditingRow] = useState(null);
+  const [editedData, setEditedData] = useState({ id: "", price: "" });
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -22,6 +24,38 @@ export default function ProductsTable() {
         product.category.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }, [products, searchTerm]);
+
+  const handleEditClick = (id, currentPrice) => {
+    setEditingRow(id);
+    setEditedData({ id, price: currentPrice });
+  };
+
+  const handleSaveClick = (id) => {
+    setProducts((prev) =>
+      prev.map((product) =>
+        product.id === id
+          ? {
+              ...product,
+              id: Number(editedData.id),
+              price: Number(editedData.price),
+            }
+          : product
+      )
+    );
+    setEditingRow(null);
+  };
+
+  const handleInputChange = (field, value) => {
+    if (field === "price" && !/^\d*\.?\d*$/.test(value)) return;
+    if (field === "id" && !/^\d*$/.test(value)) return;
+    setEditedData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleDeleteClick = (id) => {
+    setProducts((prevProducts) =>
+      prevProducts.filter((product) => product.id !== id)
+    );
+  };
 
   return (
     <motion.div
@@ -74,18 +108,18 @@ export default function ProductsTable() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.03 }}
-                className="hover:bg-[#1e1e1e] transition-colors duration-300"
+                className={`hover:bg-[#1e1e1e] transition-colors duration-300 ${
+                  editingRow === product.id ? "bg-[#2f2f2f]" : ""
+                }`}
               >
                 <td className="px-6 py-4">
-                  <div className="flex items-center">
-                    <Image
-                      src={product.image}
-                      alt={product.title}
-                      width={40}
-                      height={40}
-                      className="rounded-md shadow-md bg-white p-1"
-                    />
-                  </div>
+                  <Image
+                    src={product.image}
+                    alt={product.title}
+                    width={40}
+                    height={40}
+                    className="rounded-md shadow-md bg-white p-1"
+                  />
                 </td>
 
                 <td className="px-6 py-4 text-sm font-medium text-gray-100">
@@ -95,7 +129,16 @@ export default function ProductsTable() {
                 </td>
 
                 <td className="px-6 py-4 text-sm text-gray-400">
-                  #{product.id}
+                  {editingRow === product.id ? (
+                    <input
+                      type="text"
+                      value={editedData.id}
+                      onChange={(e) => handleInputChange("id", e.target.value)}
+                      className="bg-[#1f1f1f] border border-gray-600 text-gray-200 rounded px-2 py-1 w-16 text-center"
+                    />
+                  ) : (
+                    `#${product.id}`
+                  )}
                 </td>
 
                 <td className="px-6 py-4 text-sm text-gray-300 capitalize">
@@ -103,20 +146,45 @@ export default function ProductsTable() {
                 </td>
 
                 <td className="px-6 py-4 text-sm font-semibold text-indigo-400">
-                  ${product.price.toFixed(2)}
+                  {editingRow === product.id ? (
+                    <input
+                      type="text"
+                      value={editedData.price}
+                      onChange={(e) =>
+                        handleInputChange("price", e.target.value)
+                      }
+                      className="bg-[#1f1f1f] border border-gray-600 text-gray-200 rounded px-2 py-1 w-20 text-center"
+                    />
+                  ) : (
+                    `$${product.price.toFixed(2)}`
+                  )}
                 </td>
 
                 <td className="px-6 py-4 text-sm">
                   <div className="flex space-x-2">
-                    <button
-                      className="text-indigo-500 hover:text-indigo-300 transition"
-                      title="Edit product"
-                    >
-                      <Edit size={18} />
-                    </button>
+                    {editingRow === product.id ? (
+                      <button
+                        className="text-green-500 hover:text-green-300 transition"
+                        title="Save"
+                        onClick={() => handleSaveClick(product.id)}
+                      >
+                        <Save size={18} />
+                      </button>
+                    ) : (
+                      <button
+                        className="text-indigo-500 hover:text-indigo-300 transition"
+                        title="Edit product"
+                        onClick={() =>
+                          handleEditClick(product.id, product.price)
+                        }
+                      >
+                        <Edit size={18} />
+                      </button>
+                    )}
                     <button
                       className="text-red-500 hover:text-red-300 transition"
                       title="Delete product"
+                      onClick={() => handleDeleteClick(product.id)}
                     >
                       <Trash2 size={18} />
                     </button>
@@ -127,7 +195,6 @@ export default function ProductsTable() {
           </tbody>
         </table>
 
-        {/* Loading & Empty States */}
         {filteredProducts.length === 0 && (
           <p className="text-center text-gray-400 py-6 text-sm">
             {products.length === 0
