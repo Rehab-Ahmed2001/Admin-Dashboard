@@ -18,32 +18,32 @@
     {
       "icon": "DollarSign",
       "label": "Sales",
-      "href": "/sales"
+      "href": "/Sales"
     },
     {
       "icon": "ShoppingCart",
       "label": "Orders",
-      "href": "/orders"
+      "href": "/Orders"
     },
     {
       "icon": "Settings",
       "label": "Settings",
-      "href": "/settings"
+      "href": "/Settings"
     },
     {
       "icon": "Mail",
       "label": "Messages",
-      "href": "/messages"
+      "href": "/Messages"
     },
     {
       "icon": "Bell",
       "label": "Notifications",
-      "href": "/notifications"
+      "href": "/Notifications"
     },
     {
       "icon": "Info",
       "label": "Help",
-      "href": "/help"
+      "href": "/Help"
     }
   ],
   "sales": [
@@ -131,5 +131,5 @@
       "Revenue": 132000,
       "Profit": 52000
     }
-  ] 
+  ]
 }
