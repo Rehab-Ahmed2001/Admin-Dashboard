@@ -10,7 +10,7 @@ export default function ProductsTable() {
   const [editingRow, setEditingRow] = useState(null);
   const [editedData, setEditedData] = useState({ id: "", price: "" });
 
-  useEffect(() => {
+  useEffect(() => { 
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then((data) => setProducts(data))
