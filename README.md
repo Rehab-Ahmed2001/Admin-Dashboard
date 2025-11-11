@@ -20,16 +20,6 @@ A modern, responsive **Admin Dashboard** built with **Next.js**, **React**, **Ta
 ### 💡 Live Demo  
 🔗 [View Dashboard](https://admin-dashboard-jade-delta-95.vercel.app/)  
 
----
-
-## 📸 Screenshots  
-
-| Desktop View | Tablet View | Mobile View |
-|:-------------:|:------------:|:------------:|
-| ![Desktop Screenshot](https://i.ibb.co/x6jK0VZ/dashboard-desktop.png) | ![Tablet Screenshot](https://i.ibb.co/p0Qm8Rh/dashboard-tablet.png) | ![Mobile Screenshot](https://i.ibb.co/pzpgMnd/dashboard-mobile.png) |
-
----
-
 ## Getting Started  
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
