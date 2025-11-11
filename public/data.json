@@ -31,16 +31,6 @@
       "href": "/Settings"
     },
     {
-      "icon": "Mail",
-      "label": "Messages",
-      "href": "/Messages"
-    },
-    {
-      "icon": "Bell",
-      "label": "Notifications",
-      "href": "/Notifications"
-    },
-    {
       "icon": "Info",
       "label": "Help",
       "href": "/Help"
